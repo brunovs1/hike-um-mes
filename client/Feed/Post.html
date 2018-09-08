@@ -5,15 +5,20 @@
     </div>
     <div class="panel-body">
       <div>{{texto}}</div>
-      
+
       {{#if usuarioCurtiu}}
-      <button class='btn btn-default botao-descurtir'>Descurtir</button>
+        <button class="btn btn-default botao-descurtir">Descurtir</button>
       {{else}}
-      <button class='btn btn-default botao-curtir'>Curtir</button>
+        <button class="btn btn-default botao-curtir">Curtir</button>
       {{/if}}
-      
+
       <div>{{numeroDeCurtidas}} curtidas</div>
-      
+
+      {{#each comentarios}}
+        {{> Comentario}}
+      {{/each}}
+
+      {{> NovoComentario}}
     </div>
   </div>
 </template>

@@ -7,17 +7,18 @@ Template.Post.helpers({
     numeroDeCurtidas: function() {
         return this.curtidas.length;
     },
-    usuarioCurtiu: function(){
+    usuarioCurtiu: function() {
         var curtidas = this.curtidas;
-        
-        var posicao = curtidas.indexOf(Meteor.userId())
-        console.log(posicao)
-        
-        if(posicao === -1){
+        var posicao = curtidas.indexOf(Meteor.userId());
+
+        if(posicao === -1) {
             return false;
         } else {
             return true;
         }
+    },
+    comentarios: function() {
+        return Comentarios.find({post: this._id}).fetch();
     }
 });
 
