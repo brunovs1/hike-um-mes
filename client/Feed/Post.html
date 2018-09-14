@@ -11,18 +11,18 @@
     <img src="{{imagem}}" class="img-responsive">
     
     <div class='panel-body'>
-      {{#if usuarioCurtiu}}
-        <button class="btn btn-default botao-descurtir">Descurtir</button>
-      {{else}}
-        <button class="btn btn-default botao-curtir">Curtir</button>
+      <i class="fa fa-heart-o botao-curtir" role="button"></i>
+
+      {{#if eAutor}}
+        <i class="fa fa-trash pull-right botao-remover" role="button"></i>
       {{/if}}
       
       <div>{{numeroDeCurtidas}} curtidas</div>
-
+      
       {{#each comentarios}}
         {{> Comentario}}
       {{/each}}
-
+    
       {{> NovoComentario}}
     </div>
   </div>

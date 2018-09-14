@@ -24,6 +24,9 @@ Meteor.methods({
                 curtidas: Meteor.userId()  
            } 
         });
+    },
+    "removerPost": function(idDoPost) {
+        Posts.remove(idDoPost);
     }
 });
 
